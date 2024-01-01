@@ -19,11 +19,17 @@ public class RemoveElement {
         int k = 0;
 
         //loop through the nums array
-
-        //if val is equal to nums[i], nums[equalValues] = val
-        //increment equalValues
-        //incremtn k
-
+        for (int i = 0; i < nums.length; i++) {
+            //if val is equal to nums[i], nums[equalValues] = val
+            if (nums[i] != val) {
+                nums[equalValues] = nums[i];
+                //increment equalValues
+                equalValues++;
+                //incremtn k
+                k++;
+            }
+        }
         // return k, nums
+        return k;
     }
 }
