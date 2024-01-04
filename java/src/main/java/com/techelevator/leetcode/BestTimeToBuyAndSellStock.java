@@ -11,15 +11,13 @@ public class BestTimeToBuyAndSellStock {
      */
 
     public int maxProfit(int[] prices) {
-        //margin
         int margin = 0;
-        //loop through the array
         for (int i = 0; i < prices.length; i++){
-            //grab the next element and compare it to the remaining elements
-            int currentPrice = prices[i];
+            int buy = prices[i];
             for (int j = 1; i+j < prices.length; j++){
-                if (prices[i+j] - prices[i] > margin){
-                    margin = prices[i+j] - prices[i];
+                int sell = prices[i+j];
+                if (sell - buy > margin){
+                    margin = sell - buy;
                 }
             }
         }
