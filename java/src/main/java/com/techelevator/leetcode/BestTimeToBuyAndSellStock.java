@@ -11,16 +11,27 @@ public class BestTimeToBuyAndSellStock {
      */
 
     public int maxProfit(int[] prices) {
-        int margin = 0;
-        for (int i = 0; i < prices.length; i++){
-            int buy = prices[i];
-            for (int j = 1; i+j < prices.length; j++){
-                int sell = prices[i+j];
-                if (sell - buy > margin){
-                    margin = sell - buy;
-                }
+        if (prices == null || prices.length <= 1) {
+            return 0; // Not enough data to make a profit
+        }
+
+        int minPrice = prices[0];
+        int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            int currentPrice = prices[i];
+            int currentProfit = currentPrice - minPrice;
+
+            // Update maxProfit if the current profit is greater
+            if (currentProfit > maxProfit) {
+                maxProfit = currentProfit;
+            }
+
+            // Update minPrice if the current price is lower
+            if (currentPrice < minPrice) {
+                minPrice = currentPrice;
             }
         }
-        return margin;
+
+        return maxProfit;
     }
-}
