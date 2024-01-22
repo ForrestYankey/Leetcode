@@ -1,5 +1,7 @@
 package com.techelevator.hackerrank;
 
+import java.util.List;
+
 public class miniMaxSum {
     /*
      * Complete the 'miniMaxSum' function below.
