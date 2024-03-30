@@ -12,13 +12,13 @@ package com.techelevator.leetcode;
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int[] twoNums = new int[2];
+        int counter = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < target) {
-                int currentNum = nums[i];
-                for
-            }
 
+                int currentNum = nums[i];
+                twoNums[counter] = i;
+                counter++;
         }
         return twoNums;
     }
