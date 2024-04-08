@@ -20,8 +20,6 @@ class TwoSumTest {
         assertArrayEquals(results, expectedNums);
     }
 
-
-
     @Test
     public void testTwoSum_GivenArrayOfThreeNumbersAndTarget_ReturnTwoNumbersThatEqualTargetLocation() {
         int[] nums = new int[]{1, 2, 3};
